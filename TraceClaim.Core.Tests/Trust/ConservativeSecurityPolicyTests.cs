@@ -15,7 +15,11 @@ public class ConservativeSecurityPolicyTests
             Predicate = "affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://osv.dev",
-            ObservedAt = DateTimeOffset.UtcNow
+            IssuedAt = new DateTimeOffset(
+    2026, 9, 1, 10, 0, 0, TimeSpan.Zero),
+
+            ObservedAt = new DateTimeOffset(
+    2026, 9, 2, 8, 0, 0, TimeSpan.Zero)
         };
 
         var vendorClaim = new SoftwareClaim
@@ -25,7 +29,11 @@ public class ConservativeSecurityPolicyTests
             Predicate = "not-affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://vendor.example",
-            ObservedAt = DateTimeOffset.UtcNow
+            IssuedAt = new DateTimeOffset(
+    2026, 9, 1, 10, 0, 0, TimeSpan.Zero),
+
+            ObservedAt = new DateTimeOffset(
+    2026, 9, 2, 8, 0, 0, TimeSpan.Zero)
         };
 
         var policy = new ConservativeSecurityPolicy();
@@ -50,7 +58,11 @@ public class ConservativeSecurityPolicyTests
             Predicate = "not-affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://vendor.example",
-            ObservedAt = DateTimeOffset.UtcNow
+            IssuedAt = new DateTimeOffset(
+    2026, 9, 1, 10, 0, 0, TimeSpan.Zero),
+
+            ObservedAt = new DateTimeOffset(
+    2026, 9, 2, 8, 0, 0, TimeSpan.Zero)
         };
 
         var policy = new ConservativeSecurityPolicy();

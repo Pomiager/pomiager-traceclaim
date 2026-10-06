@@ -15,6 +15,7 @@ public class ClaimConflictDetectorTests
             Predicate = "affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://osv.dev",
+            IssuedAt = DateTimeOffset.UtcNow,
             ObservedAt = DateTimeOffset.UtcNow
         };
 
@@ -25,6 +26,7 @@ public class ClaimConflictDetectorTests
             Predicate = "not-affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://vendor.example",
+            IssuedAt = DateTimeOffset.UtcNow,
             ObservedAt = DateTimeOffset.UtcNow
         };
 
@@ -45,6 +47,7 @@ public class ClaimConflictDetectorTests
             Predicate = "affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://osv.dev",
+            IssuedAt = DateTimeOffset.UtcNow,
             ObservedAt = DateTimeOffset.UtcNow
         };
 
@@ -55,6 +58,7 @@ public class ClaimConflictDetectorTests
             Predicate = "not-affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://vendor.example",
+            IssuedAt = DateTimeOffset.UtcNow,
             ObservedAt = DateTimeOffset.UtcNow
         };
 

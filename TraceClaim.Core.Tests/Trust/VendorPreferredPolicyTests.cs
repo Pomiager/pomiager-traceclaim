@@ -15,7 +15,11 @@ public class VendorPreferredPolicyTests
             Predicate = "affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://osv.dev",
-            ObservedAt = DateTimeOffset.UtcNow
+            IssuedAt = new DateTimeOffset(
+    2026, 9, 1, 10, 0, 0, TimeSpan.Zero),
+
+            ObservedAt = new DateTimeOffset(
+    2026, 9, 2, 8, 0, 0, TimeSpan.Zero)
         };
 
         var vendorClaim = new SoftwareClaim
@@ -25,7 +29,11 @@ public class VendorPreferredPolicyTests
             Predicate = "not-affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://vendor.example",
-            ObservedAt = DateTimeOffset.UtcNow
+            IssuedAt = new DateTimeOffset(
+    2026, 9, 1, 10, 0, 0, TimeSpan.Zero),
+
+            ObservedAt = new DateTimeOffset(
+    2026, 9, 2, 8, 0, 0, TimeSpan.Zero)
         };
 
         var policy = new VendorPreferredPolicy(
@@ -54,7 +62,11 @@ public class VendorPreferredPolicyTests
             Predicate = "affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://osv.dev",
-            ObservedAt = DateTimeOffset.UtcNow
+            IssuedAt = new DateTimeOffset(
+    2026, 9, 1, 10, 0, 0, TimeSpan.Zero),
+
+            ObservedAt = new DateTimeOffset(
+    2026, 9, 2, 8, 0, 0, TimeSpan.Zero)
         };
 
         var policy = new VendorPreferredPolicy(
@@ -76,8 +88,18 @@ public class VendorPreferredPolicyTests
             Predicate = "affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://vendor.example",
+
+            // The claim was originally issued by the vendor on September 1st.
+            // IssuedAt represents the issuer-side chronology and is therefore
+            // the timestamp used when determining which vendor claim is newer.
+            IssuedAt = new DateTimeOffset(
+        2026, 9, 1, 10, 0, 0, TimeSpan.Zero),
+
+            // TraceClaim observed the claim after it had already been issued.
+            // Keeping this timestamp separate allows ingestion chronology
+            // to differ from the issuer's own claim chronology.
             ObservedAt = new DateTimeOffset(
-                2026, 9, 1, 10, 0, 0, TimeSpan.Zero)
+        2026, 9, 2, 8, 0, 0, TimeSpan.Zero)
         };
 
         var newClaim = new SoftwareClaim
@@ -87,8 +109,15 @@ public class VendorPreferredPolicyTests
             Predicate = "not-affected-by",
             Object = "CVE-2026-1234",
             Issuer = "https://vendor.example",
+
+            // Five days later the vendor publishes a newer assertion
+            // about the same package and vulnerability.
+            IssuedAt = new DateTimeOffset(
+         2026, 9, 5, 10, 0, 0, TimeSpan.Zero),
+
+            // TraceClaim ingests the newer assertion shortly after publication.
             ObservedAt = new DateTimeOffset(
-                2026, 9, 5, 10, 0, 0, TimeSpan.Zero)
+         2026, 9, 5, 12, 0, 0, TimeSpan.Zero)
         };
 
         var policy = new VendorPreferredPolicy(

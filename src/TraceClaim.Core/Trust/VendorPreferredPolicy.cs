@@ -40,7 +40,13 @@ public sealed class VendorPreferredPolicy : ITrustPolicy
                 c.Issuer,
                 _vendorIssuer,
                 StringComparison.OrdinalIgnoreCase))
-            .OrderByDescending(c => c.ObservedAt)
+            // The preferred vendor may issue multiple claims about the same software
+            // over time. The most recent issuer-side statement must take precedence.
+            //
+            // IssuedAt is used here instead of ObservedAt because this policy is meant
+            // to follow the vendor's own logical timeline, not the order in which
+            // TraceClaim happened to ingest the claims.
+            .OrderByDescending(c => c.IssuedAt)
             .FirstOrDefault();
 
         if (vendorClaim is not null)
