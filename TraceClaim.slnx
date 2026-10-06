@@ -5,7 +5,11 @@
     <File Path="README.md" />
   </Folder>
   <Folder Name="/src/">
+    <Project Path="src/TraceClaim.Adapters.Osv/TraceClaim.Adapters.Osv.csproj" Id="0b59b987-dcfe-49b0-8060-315639e53217" />
     <Project Path="src/TraceClaim.Core/TraceClaim.Core.csproj" Id="9cdd4576-ed93-45a9-9107-774d2b722ef8" />
   </Folder>
-  <Project Path="TraceClaim.Core.Tests/TraceClaim.Core.Tests.csproj" Id="c69f4b4b-aedf-411a-a641-3193d8ee95e4" />
+  <Folder Name="/tests/">
+    <Project Path="TraceClaim.Adapters.Osv.Tests/TraceClaim.Adapters.Osv.Tests.csproj" Id="4888e8f4-0971-45e5-a24f-b2bd63825f63" />
+    <Project Path="TraceClaim.Core.Tests/TraceClaim.Core.Tests.csproj" Id="c69f4b4b-aedf-411a-a641-3193d8ee95e4" />
+  </Folder>
 </Solution>

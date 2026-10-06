@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.9.1",
+  "id": "CVE-2026-1234",
+  "published": "2026-09-01T10:00:00Z",
+  "modified": "2026-09-03T09:00:00Z",
+  "summary": "Synthetic vulnerability used by TraceClaim tests.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "NuGet",
+        "name": "Acme.Security",
+        "purl": "pkg:nuget/Acme.Security"
+      },
+      "versions": [
+        "2.0.0",
+        "2.0.1",
+        "2.1.0"
+      ]
+    }
+  ]
+}
