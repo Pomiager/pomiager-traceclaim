@@ -1,19 +1,21 @@
 <Solution>
-  <Folder Name="/Elementi di soluzione/">
-    <File Path="../../../Downloads/README.md" />
-    <File Path=".gitignore" />
-    <File Path="LICENSE" />
+  <Folder Name="/docs/">
+    <File Path="docs/ARCHITECTURE.md" />
+    <File Path="docs/CLAIM-MODEL.md" />
+    <File Path="docs/MOTIVATION.md" />
+    <File Path="docs/POC-STATUS.md" />
+    <File Path="docs/PRIOR-ART.md" />
+    <File Path="docs/REFERENCES.md" />
+    <File Path="docs/ROADMAP.md" />
+    <File Path="docs/STANDARDS-MAPPING.md" />
+    <File Path="docs/TRUST-POLICIES.md" />
   </Folder>
-  <Folder Name="/Elementi di soluzione/Docs/">
-    <File Path="../../../Documents/TraceClaim/traceclaim-docs/docs/ARCHITECTURE.md" />
-    <File Path="../../../Documents/TraceClaim/traceclaim-docs/docs/CLAIM-MODEL.md" />
-    <File Path="../../../Documents/TraceClaim/traceclaim-docs/docs/MOTIVATION.md" />
-    <File Path="../../../Documents/TraceClaim/traceclaim-docs/docs/POC-STATUS.md" />
-    <File Path="../../../Documents/TraceClaim/traceclaim-docs/docs/PRIOR-ART.md" />
-    <File Path="../../../Documents/TraceClaim/traceclaim-docs/docs/REFERENCES.md" />
-    <File Path="../../../Documents/TraceClaim/traceclaim-docs/docs/ROADMAP.md" />
-    <File Path="../../../Documents/TraceClaim/traceclaim-docs/docs/STANDARDS-MAPPING.md" />
-    <File Path="../../../Documents/TraceClaim/traceclaim-docs/docs/TRUST-POLICIES.md" />
+  <Folder Name="/Elementi di soluzione/">
+    <File Path=".gitignore" />
+    <File Path="Contributing.md" />
+    <File Path="LICENSE" />
+    <File Path="Readme.md" />
+    <File Path="Security.md" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/TraceClaim.Adapters.OpenVex/TraceClaim.Adapters.OpenVex.csproj" Id="0a9cfa43-6a48-4c66-b8b1-c4dfb683188e" />
