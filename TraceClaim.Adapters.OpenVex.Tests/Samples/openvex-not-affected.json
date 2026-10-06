@@ -1,0 +1,22 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://vendor.example/vex/traceclaim-demo-1",
+  "author": "https://vendor.example",
+  "role": "Document Creator",
+  "timestamp": "2026-09-03T10:00:00Z",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2026-1234"
+      },
+      "products": [
+        {
+          "@id": "pkg:nuget/Acme.Security@2.1.0"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path"
+    }
+  ]
+}
